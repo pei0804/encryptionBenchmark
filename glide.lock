@@ -1,0 +1,13 @@
+hash: d93a1fccfb43f4469eb39c451c45bac5cb42df7c0420b9ee22f477a1dc4be4aa
+updated: 2017-01-02T10:06:10.653376015+09:00
+imports:
+- name: golang.org/x/crypto
+  version: ede567c8e044a5913dad1d1af3696d9da953104c
+  subpackages:
+  - bcrypt
+  - blowfish
+  - pbkdf2
+  - ripemd160
+  - scrypt
+  - sha3
+testImports: []
