@@ -13,6 +13,7 @@ $ go run main.go
 - sha512: 4.276µs
 - sha3-256: 5.999µs
 - Ripemd: 5.323µs
+- MD5: 2.669µs
 
 ## 2nd time
 
@@ -22,6 +23,7 @@ $ go run main.go
 - sha512: 2.339µs
 - sha3-256: 7.625µs
 - Ripemd: 9.218µs
+- MD5: 2.625µs
 
 ## 3rd time
 
@@ -31,6 +33,7 @@ $ go run main.go
 - sha512: 3.291µs
 - sha3-256: 8.048µs
 - Ripemd: 4.314µs
+- MD5: 3.104µs
 
 ## 4th time
 
@@ -40,6 +43,7 @@ $ go run main.go
 - sha512: 3.083µs
 - sha3-256: 7.453µs
 - Ripemd: 8.307µs
+- MD5: 1.775µs
 
 ## 5th time
 
@@ -49,3 +53,4 @@ $ go run main.go
 - sha512: 3.321µs
 - sha3-256: 6.446µs
 - Ripemd: 3.99µs
+- MD5: 2.759µs

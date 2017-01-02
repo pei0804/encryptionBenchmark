@@ -1,13 +1,13 @@
 package main
 
 import (
-	"encoding/hex"
-	"fmt"
-	"testing"
-
+	"crypto/md5"
 	"crypto/sha256"
 	"crypto/sha512"
+	"encoding/hex"
+	"fmt"
 	"io"
+	"testing"
 
 	"golang.org/x/crypto/bcrypt"
 	"golang.org/x/crypto/ripemd160"
@@ -44,6 +44,12 @@ func toHasgFromRipemd_160(str string) string {
 	io.WriteString(ripemd160.New(), str)
 	converted := sha3.Sum256([]byte(str))
 	return hex.EncodeToString(converted[:])
+}
+
+func toHashFromMd5(str string) string {
+	hasher := md5.New()
+	hasher.Write([]byte(str))
+	return hex.EncodeToString(hasher.Sum(nil))
 }
 
 func main() {
@@ -85,4 +91,10 @@ func main() {
 		toHasgFromRipemd_160(str)
 	})
 	fmt.Printf("Ripemd: %s\n", result.T)
+
+	// MD5
+	result = testing.Benchmark(func(b *testing.B) {
+		toHashFromMd5(str)
+	})
+	fmt.Printf("MD5: %s\n", result.T)
 }
